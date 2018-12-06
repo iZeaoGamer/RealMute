@@ -19,10 +19,10 @@
 
 namespace RealMute;
 
-use pocketmine\scheduler\PluginTask;
+use pocketmine\scheduler\Task;
 use pocketmine\utils\Config;
 
-class CheckTime extends PluginTask
+class CheckTime extends Task
 {
     private $plugin;
 
@@ -31,7 +31,6 @@ class CheckTime extends PluginTask
 
     public function __construct(RealMute $plugin)
     {
-        parent::__construct($plugin);
         $this->plugin = $plugin;
         // Registers muted identity list as a configuration file
         $this->mutedIdentities = new Config($this->getPlugin()->getDataFolder() .
