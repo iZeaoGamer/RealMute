@@ -162,7 +162,7 @@ class RealMute extends PluginBase implements Listener
 
         // Sets up time checking task
         $checkTimeTask = new CheckTime($this);
-        $handler = $this->getServer()->getScheduler()->scheduleRepeatingTask(
+        $handler = $this->getScheduler()->scheduleRepeatingTask(
             $checkTimeTask, 20);
         $checkTimeTask->setHandler($handler);
     }
